@@ -15,3 +15,8 @@ target_link_libraries(nvml_monitoring
     ${NVML_LIBRARY}
     Threads::Threads
 )
+
+
+
+
+

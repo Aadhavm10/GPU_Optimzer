@@ -35,3 +35,8 @@ private:
     void update_derived_metrics(GPUMetrics& metrics);
     bool check_throttle_reasons(nvmlDevice_t device);
 };
+
+
+
+
+

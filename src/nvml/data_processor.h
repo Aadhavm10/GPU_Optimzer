@@ -51,3 +51,8 @@ private:
     double calculate_moving_average(const std::vector<double>& values, size_t window_size);
     double calculate_slope(const std::vector<double>& values, const std::vector<double>& timestamps);
 };
+
+
+
+
+

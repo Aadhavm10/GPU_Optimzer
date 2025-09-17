@@ -708,3 +708,8 @@ bool should_use_vectorized_operations(int N) {
 size_t get_reduction_shared_memory_size(int block_size) {
     return block_size * sizeof(float);
 }
+
+
+
+
+

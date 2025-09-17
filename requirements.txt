@@ -47,3 +47,8 @@ ipykernel>=6.4.0
 # Optional: Machine learning for advanced features
 # tensorflow>=2.7.0    # Uncomment for ML-based optimization
 # torch>=1.10.0        # Uncomment for PyTorch integration
+
+
+
+
+

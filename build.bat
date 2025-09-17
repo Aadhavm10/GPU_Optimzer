@@ -308,3 +308,8 @@ exit /b 0
 echo.
 echo %ERROR_PREFIX% Build failed. Please check the errors above and try again.
 exit /b 1
+
+
+
+
+

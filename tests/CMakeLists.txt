@@ -32,3 +32,8 @@ if(BUILD_TESTS)
     add_test(NAME ConfigTests COMMAND gpu_optimizer_tests --gtest_filter="Config*")
     add_test(NAME TimerTests COMMAND gpu_optimizer_tests --gtest_filter="Timer*")
 endif()
+
+
+
+
+

@@ -1,0 +1,73 @@
+# Build directories
+build/
+dist/
+*.egg-info/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Virtual environments
+.venv/
+.env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+
+# CUDA
+*.ptx
+*.cubin
+
+# Logs
+*.log
+logs/
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+!CMakeLists.txt
+
+# Visual Studio
+*.vcxproj
+*.vcxproj.filters
+*.sln
+*.user
+.vs/
+
+# Compiled executables
+*.exe
+*.out
+*.app
+cuda_demo
+gpu_optimizer
+
+# Data files
+*.csv
+*.json
+data/
+results/
+
+# Temporary files
+*.bak
+*.orig

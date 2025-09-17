@@ -258,3 +258,8 @@ double DataProcessor::calculate_slope(const std::vector<double>& values, const s
     
     return numerator / denominator;
 }
+
+
+
+
+

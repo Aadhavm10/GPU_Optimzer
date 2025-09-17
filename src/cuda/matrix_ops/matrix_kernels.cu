@@ -444,3 +444,8 @@ size_t get_shared_memory_per_block() {
     
     return prop.sharedMemPerBlock;
 }
+
+
+
+
+

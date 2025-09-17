@@ -167,3 +167,8 @@ std::string GPUMetrics::get_csv_header() {
            "compute_efficiency,memory_efficiency,thermal_efficiency,"
            "is_throttled,is_overheating,is_power_limited,is_memory_bottlenecked";
 }
+
+
+
+
+

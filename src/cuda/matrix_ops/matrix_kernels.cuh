@@ -104,3 +104,8 @@ dim3 get_optimal_grid_size(int M, int N, int tile_size);
 dim3 get_optimal_block_size(int tile_size);
 bool supports_tensor_cores();
 size_t get_shared_memory_per_block();
+
+
+
+
+
