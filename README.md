@@ -1,6 +1,6 @@
 # GPU Utilization Optimizer
 
-Check out my other projects at aadhavmani.com
+Check out my other projects at [aadhavmani.com](https://aadhavmani.com)
 
 
 
