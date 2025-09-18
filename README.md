@@ -17,26 +17,19 @@ Check out my other projects at [aadhavmani.com](https://aadhavmani.com)
 
 ## Why This Project Matters
 
-### The Problem
+### Problem
 - **GPU Underutilization**: Most applications don't fully utilize GPU capabilities
 - **Poor Performance Monitoring**: Lack of real-time GPU metrics and optimization insights
 - **Complex CUDA Setup**: Difficult to get started with GPU programming and optimization
 - **No Visual Feedback**: Hard to understand GPU performance bottlenecks
 
-### Our Solution
-This project provides a **complete GPU optimization ecosystem** that helps you:
+### Solution
+This project provides a **complete GPU optimization kit** that helps:
 
 - **Monitor Your GPU**: Real-time metrics, temperature, power consumption, and performance  
 - **Optimize Performance**: CUDA kernels with 5-12x speedup over CPU implementations  
 - **Visualize Data**: Professional web dashboard with live charts and historical analysis  
 - **Get Started Fast**: Simple installation and immediate results  
-
-### Perfect For
-- **Developers** learning CUDA programming
-- **Researchers** needing GPU performance analysis
-- **Gamers** wanting to monitor their GPU performance
-- **Students** studying parallel computing
-- **Anyone** interested in GPU optimization
 
 ## Results
 
@@ -537,43 +530,10 @@ gpu-utilization-optimizer/
 - **Alert System**: Threshold-based notifications
 - **Export Data**: CSV and JSON formats
 
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
-
-### Development Setup
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests
-5. Submit a pull request
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
-
-- **NVIDIA** for CUDA toolkit and NVML
-- **Dash/Plotly** for web visualization
-- **Open source community** for inspiration
-
-## 📞 Support
-
-- **Issues**: [GitHub Issues](https://github.com/yourusername/gpu-utilization-optimizer/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/gpu-utilization-optimizer/discussions)
-- **Email**: your.email@example.com
-
-## Roadmap
-
-- [ ] **Multi-GPU Support**: Enhanced multi-GPU monitoring
-- [ ] **Machine Learning Integration**: ML workload optimization
-- [ ] **Cloud Deployment**: AWS/GCP/Azure support
-- [ ] **Mobile App**: iOS/Android monitoring app
-- [ ] **Advanced Analytics**: Predictive performance modeling
-- [ ] **Real CUDA Compilation**: Fix Visual Studio integration for full CUDA support
-- [ ] **Performance Profiling**: Advanced GPU profiling tools
-- [ ] **Alert System**: Threshold-based notifications
 
 ## Quick Summary
 
@@ -582,24 +542,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **CUDA performance demos** showing 5-12x speedup
 - **Easy Windows setup** with automated installation script
 - **Complete toolkit** for GPU optimization and analysis
-
-**Perfect for:**
-- Learning CUDA programming
-- Monitoring GPU performance
-- Understanding GPU optimization
-- Building GPU-powered applications
-
-**Get started in 5 minutes:**
-1. Download the project
-2. Run `.\setup_windows.ps1`
-3. Open http://localhost:8050
-4. Watch your GPU metrics live!
-
----
-
-**Made for the GPU optimization community**
-
-**Star this repo** if you find it helpful!  
-**Report issues** if you find bugs!  
-**Suggest features** if you have ideas!  
-**Contribute** if you want to help!
