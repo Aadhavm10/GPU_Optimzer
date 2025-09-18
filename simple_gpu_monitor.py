@@ -18,7 +18,7 @@ def initialize_nvml():
         pynvml.nvmlInit()
         return True
     except Exception as e:
-        print(f"❌ Failed to initialize NVML: {e}")
+        print(f"Failed to initialize NVML: {e}")
         print("Make sure you have NVIDIA drivers installed and a GPU available.")
         return False
 
@@ -26,7 +26,7 @@ def get_gpu_info():
     """Get basic GPU information"""
     try:
         device_count = pynvml.nvmlDeviceGetCount()
-        print(f"🔍 Found {device_count} GPU(s)")
+        print(f"Found {device_count} GPU(s)")
         
         gpus = []
         for i in range(device_count):
@@ -50,7 +50,7 @@ def get_gpu_info():
         
         return gpus
     except Exception as e:
-        print(f"❌ Error getting GPU info: {e}")
+        print(f"Error getting GPU info: {e}")
         return []
 
 def get_gpu_metrics(handle):
@@ -104,7 +104,7 @@ def get_gpu_metrics(handle):
         
         return metrics
     except Exception as e:
-        print(f"❌ Error getting metrics: {e}")
+        print(f"Error getting metrics: {e}")
         return {}
 
 def format_metrics(gpu_id, gpu_name, metrics):
@@ -113,16 +113,16 @@ def format_metrics(gpu_id, gpu_name, metrics):
     
     return (
         f"[{timestamp}] 🖥️  GPU {gpu_id} ({gpu_name})\n"
-        f"  📊 Utilization: {metrics.get('gpu_util', 0):3d}% GPU, {metrics.get('memory_util', 0):3d}% Memory\n"
-        f"  🧠 Memory: {metrics.get('memory_used_mb', 0):,} MB / {metrics.get('memory_total_mb', 0):,} MB ({metrics.get('memory_percent', 0):.1f}%)\n"
-        f"  🌡️  Temperature: {metrics.get('temperature', 0)}°C\n"
-        f"  ⚡ Power: {metrics.get('power_watts', 0)} W\n"
-        f"  🔄 Clocks: {metrics.get('graphics_clock_mhz', 0)} MHz GPU, {metrics.get('memory_clock_mhz', 0)} MHz Memory\n"
+        f"  Utilization: {metrics.get('gpu_util', 0):3d}% GPU, {metrics.get('memory_util', 0):3d}% Memory\n"
+        f"  Memory: {metrics.get('memory_used_mb', 0):,} MB / {metrics.get('memory_total_mb', 0):,} MB ({metrics.get('memory_percent', 0):.1f}%)\n"
+        f"  Temperature: {metrics.get('temperature', 0)}°C\n"
+        f"  Power: {metrics.get('power_watts', 0)} W\n"
+        f"  Clocks: {metrics.get('graphics_clock_mhz', 0)} MHz GPU, {metrics.get('memory_clock_mhz', 0)} MHz Memory\n"
     )
 
 def monitor_gpus(gpus, duration_seconds=None, update_interval=2):
     """Monitor GPUs continuously"""
-    print(f"\n🚀 Starting GPU monitoring (update every {update_interval}s)")
+    print(f"\nStarting GPU monitoring (update every {update_interval}s)")
     print("Press Ctrl+C to stop\n")
     
     start_time = time.time()
@@ -143,16 +143,16 @@ def monitor_gpus(gpus, duration_seconds=None, update_interval=2):
             
             # Check duration limit
             if duration_seconds and (time.time() - start_time) > duration_seconds:
-                print(f"✅ Monitoring completed ({duration_seconds}s)")
+                print(f" Monitoring completed ({duration_seconds}s)")
                 break
             
-            print(f"⏱️  Running for {int(time.time() - start_time)}s - Press Ctrl+C to stop")
+            print(f"⏱Running for {int(time.time() - start_time)}s - Press Ctrl+C to stop")
             print("=" * 80)
             
             time.sleep(update_interval)
             
     except KeyboardInterrupt:
-        print(f"\n✅ Monitoring stopped by user after {int(time.time() - start_time)}s")
+        print(f"\nMonitoring stopped by user after {int(time.time() - start_time)}s")
 
 def main():
     """Main function"""
@@ -166,10 +166,10 @@ def main():
     # Get GPU information
     gpus = get_gpu_info()
     if not gpus:
-        print("❌ No GPUs found or accessible")
+        print("No GPUs found or accessible")
         sys.exit(1)
     
-    print(f"\n✅ Successfully detected {len(gpus)} GPU(s)")
+    print(f"\nSuccessfully detected {len(gpus)} GPU(s)")
     
     # Parse command line arguments
     duration = None
@@ -188,17 +188,17 @@ def main():
             if len(sys.argv) > 2:
                 interval = float(sys.argv[2])
         except ValueError:
-            print("❌ Invalid arguments. Use numbers for duration and interval.")
+            print("Invalid arguments. Use numbers for duration and interval.")
             sys.exit(1)
     
     # Start monitoring
     try:
         monitor_gpus(gpus, duration, interval)
     except Exception as e:
-        print(f"❌ Monitoring error: {e}")
+        print(f"Monitoring error: {e}")
     finally:
         pynvml.nvmlShutdown()
-        print("👋 GPU Optimizer shutting down...")
+        print("GPU Optimizer shutting down...")
 
 if __name__ == "__main__":
     main()

@@ -97,7 +97,7 @@ app.title = "🖥️ GPU Optimizer Dashboard"
 # Layout
 app.layout = html.Div([
     html.Div([
-        html.H1("🖥️ GPU Utilization Optimizer", 
+        html.H1(" GPU Utilization Optimizer", 
                 style={'textAlign': 'center', 'color': '#2E86AB', 'margin': '20px'}),
         html.H3(id="gpu-name", 
                 style={'textAlign': 'center', 'color': '#A23B72', 'margin': '10px'}),
@@ -157,7 +157,7 @@ app.layout = html.Div([
     ),
     
     html.Footer([
-        html.P("🚀 Real-time GPU monitoring dashboard - Press F5 to refresh", 
+        html.P(" Real-time GPU monitoring dashboard - Press F5 to refresh", 
                style={'textAlign': 'center', 'margin': '20px', 'color': '#6c757d'})
     ])
 ], style={'fontFamily': 'Arial, sans-serif', 'backgroundColor': '#ffffff'})
@@ -169,8 +169,8 @@ app.layout = html.Div([
 )
 def update_gpu_name(n):
     if gpu_info:
-        return f"📊 {gpu_info['name']} ({gpu_info['memory_total_mb']:,} MB)"
-    return "🔍 Detecting GPU..."
+        return f" {gpu_info['name']} ({gpu_info['memory_total_mb']:,} MB)"
+    return "Detecting GPU..."
 
 @app.callback(
     [Output('gpu-util-display', 'children'),
@@ -218,7 +218,7 @@ def update_utilization_chart(n):
                             line=dict(color='#C73E1D', width=3)))
     
     fig.update_layout(
-        title='📊 GPU & Memory Utilization',
+        title=' GPU & Memory Utilization',
         xaxis_title='Time', 
         yaxis_title='Utilization (%)',
         yaxis=dict(range=[0, 100]),
@@ -244,7 +244,7 @@ def update_temperature_chart(n):
                             line=dict(color='#2E86AB', width=3)))
     
     fig.update_layout(
-        title='🌡️ GPU Temperature',
+        title=' GPU Temperature',
         xaxis_title='Time', 
         yaxis_title='Temperature (°C)',
         plot_bgcolor='rgba(248,249,250,0.8)'
@@ -274,7 +274,7 @@ def update_memory_chart(n):
                      annotation_text=f"Total: {metrics_data['memory_total']:,} MB")
     
     fig.update_layout(
-        title='🧠 GPU Memory Usage',
+        title='GPU Memory Usage',
         xaxis_title='Time', 
         yaxis_title='Memory (MB)',
         plot_bgcolor='rgba(248,249,250,0.8)'
@@ -282,33 +282,33 @@ def update_memory_chart(n):
     return fig
 
 if __name__ == '__main__':
-    print("🚀 GPU Utilization Optimizer Dashboard")
+    print("GPU Utilization Optimizer Dashboard")
     print("=" * 50)
     
     # Initialize GPU
     if not initialize_gpu():
-        print("❌ Failed to initialize GPU monitoring")
+        print("Failed to initialize GPU monitoring")
         print("Make sure you have NVIDIA drivers and pynvml installed")
         exit(1)
     
-    print(f"✅ GPU detected: {gpu_info['name']}")
-    print(f"📊 Memory: {gpu_info['memory_total_mb']:,} MB")
+    print(f"GPU detected: {gpu_info['name']}")
+    print(f"Memory: {gpu_info['memory_total_mb']:,} MB")
     
     # Start background metrics collection
     metrics_thread = threading.Thread(target=collect_metrics, daemon=True)
     metrics_thread.start()
-    print("✅ Background monitoring started")
+    print("Background monitoring started")
     
     print("\n🌐 Starting web dashboard...")
-    print("📍 URL: http://localhost:8050")
-    print("🔄 Updates every 2 seconds")
-    print("⏹️  Press Ctrl+C to stop")
+    print("URL: http://localhost:8050")
+    print("Updates every 2 seconds")
+    print("Press Ctrl+C to stop")
     print("=" * 50)
     
     try:
         # Run dashboard
         app.run(debug=False, host='localhost', port=8050)
     except KeyboardInterrupt:
-        print("\n👋 Dashboard stopped by user")
+        print("\nDashboard stopped by user")
     except Exception as e:
-        print(f"\n❌ Dashboard error: {e}")
+        print(f"\nDashboard error: {e}")

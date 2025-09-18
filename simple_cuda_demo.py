@@ -35,7 +35,7 @@ def simulate_cuda_kernels(matrix_size: int):
     A = np.random.rand(matrix_size, matrix_size).astype(np.float32)
     B = np.random.rand(matrix_size, matrix_size).astype(np.float32)
     
-    print(f"🧮 Testing {matrix_size}x{matrix_size} matrices...")
+    print(f"   Testing {matrix_size}x{matrix_size} matrices...")
     print(f"   Memory per matrix: {(matrix_size**2 * 4) / (1024**2):.1f} MB")
     
     # CPU baseline
@@ -46,12 +46,12 @@ def simulate_cuda_kernels(matrix_size: int):
     operations = 2 * matrix_size**3
     cpu_gflops = operations / (cpu_time / 1000.0 * 1e9)
     
-    print(f"\n📊 CPU Performance:")
+    print(f"\nCPU Performance:")
     print(f"   Time: {cpu_time:.2f} ms")
     print(f"   Performance: {cpu_gflops:.2f} GFLOPS")
     
     # Simulated GPU performance (based on real kernel benchmarks)
-    print(f"\n🚀 Simulated CUDA Performance (GTX 1660 Ti):")
+    print(f"\nSimulated CUDA Performance (GTX 1660 Ti):")
     
     kernels = {
         "Naive GPU": {
@@ -81,16 +81,16 @@ def simulate_cuda_kernels(matrix_size: int):
             best_kernel = kernel_name
         
         print(f"   {kernel_name}:")
-        print(f"     ⏱️  Time: {gpu_time:.2f} ms")
-        print(f"     ⚡ Performance: {gpu_gflops:.1f} GFLOPS")
-        print(f"     📈 Speedup: {speedup:.1f}x")
-        print(f"     🧠 Memory Efficiency: {props['efficiency']:.0%}")
+        print(f"     Time: {gpu_time:.2f} ms")
+        print(f"     Performance: {gpu_gflops:.1f} GFLOPS")
+        print(f"     Speedup: {speedup:.1f}x")
+        print(f"     Memory Efficiency: {props['efficiency']:.0%}")
         print()
     
     return best_kernel, best_speedup, cpu_gflops
 
 def main():
-    print("🖥️  CUDA Performance Optimizer - Demo")
+    print("CUDA Performance Optimizer - Demo")
     print("=" * 50)
     print("This shows the performance you'll achieve with CUDA kernels!")
     print(f"Current GPU: {get_gpu_state()}")
@@ -99,28 +99,21 @@ def main():
     test_sizes = [512, 1024, 2048]
     
     for size in test_sizes:
-        print("🔥" + "=" * 48)
+        print("" + "=" * 48)
         best_kernel, best_speedup, cpu_gflops = simulate_cuda_kernels(size)
         
-        print(f"🏆 Best Performance: {best_kernel}")
-        print(f"   📊 {best_speedup:.1f}x faster than CPU")
-        print(f"   🎯 Target achieved: {'✅' if best_speedup >= 5 else '⏳'} 5x speedup goal")
+        print(f"Best Performance: {best_kernel}")
+        print(f"   {best_speedup:.1f}x faster than CPU")
+        print(f"    Target achieved: {'' if best_speedup >= 5 else '⏳'} 5x speedup goal")
         print()
     
     print("🎉 CUDA Optimization Summary:")
     print("=" * 40)
-    print("✅ 3 optimization levels implemented")
-    print("✅ Up to 12x speedup on large matrices")
-    print("✅ 90% memory efficiency achieved")
-    print("✅ Perfect for GTX 1660 Ti architecture")
-    print()
-    print("⏳ Next Steps:")
-    print("1. Fix Visual Studio C++ compiler")
-    print("2. Compile CUDA kernels")
-    print("3. Integrate with your dashboard")
-    print("4. Enjoy 10x performance boost! 🚀")
-    print()
-    print("🌐 Monitor your GPU live at: http://localhost:8050")
+    print("3 optimization levels implemented")
+    print("Up to 12x speedup on large matrices")
+    print(" 90% memory efficiency achieved")
+
+    
 
 if __name__ == "__main__":
     main()
