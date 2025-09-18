@@ -482,17 +482,27 @@ monitor_gpu(60)
 ## 🏗️ Project Structure
 
 ```
-gpu-utilization-optimizer/
+GPU_Optimzer/
 ├── src/                    # C++ source code
-│   ├── cuda/              # CUDA kernels and profiling
-│   ├── nvml/              # NVML monitoring layer
-│   └── main.cpp           # Main application
-├── src/python/            # Python bindings
-├── tests/                 # Test suite
-├── *.py                   # Python utilities and demos
-├── CMakeLists.txt         # Build configuration
-├── requirements.txt       # Python dependencies
-└── README.md             # This file
+├── tests/                  # Test suite
+├── screenshots/            # Dashboard and CLI screenshots
+├── venv/                   # (Optional) Python virtual environment
+├── build.bat               # Windows build script
+├── build.sh                # Linux/macOS build script
+├── CMakeLists.txt          # Build configuration
+├── LICENSE                 # Project license
+├── PROJECT_SUMMARY.md      # Project summary and documentation
+├── README.md               # This file
+├── requirements.txt        # Python dependencies
+├── setup.py                # Python setup script
+├── setup_windows.ps1       # Windows setup and automation script
+├── cuda_demo.cu            # CUDA matrix multiplication demo
+├── cuda_performance_demo.py# Python CUDA performance demo
+├── gpu_dashboard.py        # Main GPU dashboard app (Python)
+├── gpu_load_test.py        # GPU stress/load test script
+├── simple_cuda_demo.py     # Simple CUDA performance comparison
+├── simple_dashboard.py     # Entry point: web dashboard server
+├── simple_gpu_monitor.py   # Command-line GPU monitor
 ```
 
 ## 🔧 Configuration
